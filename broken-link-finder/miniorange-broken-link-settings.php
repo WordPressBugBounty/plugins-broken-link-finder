@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Broken Link Checker/Finder
  * Description: Simple & user friendly Plugin. This plugin provides features like broken link checker, loading time of the pages, report of broken link in csv/xml format, etc.
- * Version: 2.5.0
+ * Version: 2.5.1
  * Author: Cyberlord92
  * Author URI: https://miniorange.com
  * License: GPL2
@@ -13,7 +13,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-define( 'MOBLC_VERSION', '2.5.0' );
+define( 'MOBLC_VERSION', '2.5.1' );
 define( 'MOBLC_PLUGIN_URL', ( plugin_dir_url( __FILE__ ) ) );
 global $moblc_dirname;
 $moblc_dirname = dirname( __FILE__ );

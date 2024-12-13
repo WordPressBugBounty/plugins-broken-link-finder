@@ -229,14 +229,14 @@ if ( ! class_exists( 'MOBLC_Ajax' ) ) {
 						MOBLCUtility::moblc_debug_file( '  scanning link  [tag:youtube]' );
 						if ( false === strpos( $body, 'Video unavailable' ) ) {
 							MOBLCUtility::moblc_debug_file( 'Calling wp_remote_post:   ' );
-							$response = wp_remote_retrieve_response_code( wp_remote_head( $edited_link_text ) );
+							$response = wp_remote_retrieve_response_code( wp_safe_remote_head( $edited_link_text ) );
 							$status   = isset( $response ) ? $response : 'invalid link';
 						} else {
 							$status = 404;
 						}
 					} else {
 						MOBLCUtility::moblc_debug_file( 'Calling wp_remote_post:   ' );
-						$response = wp_remote_retrieve_response_code( wp_remote_head( $edited_link_text ) );
+						$response = wp_remote_retrieve_response_code( wp_safe_remote_head( $edited_link_text ) );
 						$status   = isset( $response ) ? $response : 'invalid link';
 
 					}
@@ -326,7 +326,7 @@ if ( ! class_exists( 'MOBLC_Ajax' ) ) {
 
 			$moblc_link         = moblc_relative_to_absolute( $moblc_link, get_site_url() );
 			$max_execution_time = ini_get( 'max_execution_time' );
-			$response           = wp_remote_head(
+			$response           = wp_safe_remote_head(
 				$moblc_link,
 				array(
 					CURLOPT_TIMEOUT => ( $max_execution_time - 5 ) * 1000, // increase this.
@@ -415,7 +415,7 @@ if ( ! class_exists( 'MOBLC_Ajax' ) ) {
 				$moblc_link_id = isset( $_POST['link_id'] ) ? sanitize_text_field( wp_unslash( $_POST['link_id'] ) ) : '';
 
 				if ( $moblc_link && $moblc_link_id ) {
-					$response = wp_remote_retrieve_response_code( wp_remote_head( $moblc_link ) );
+					$response = wp_remote_retrieve_response_code( wp_safe_remote_head( $moblc_link ) );
 
 					$status = isset( $response ) ? $response : 'invalid link';
 

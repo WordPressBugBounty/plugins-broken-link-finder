@@ -109,12 +109,12 @@ if ( ! class_exists( 'MOBLC_Cron' ) ) {
 								$body = wp_remote_retrieve_body( wp_remote_post( $link ) );
 								MOBLCUtility::moblc_debug_file( '  scanning link  [tag:youtube]' );
 								if ( strpos( $body, 'Video unavailable' ) === false ) {
-									$response = wp_remote_retrieve_response_code( wp_remote_head( $link ) );
+									$response = wp_remote_retrieve_response_code( wp_safe_remote_head( $link ) );
 								} else {
 									$status = 404;
 								}
 							} else {
-								$response = wp_remote_retrieve_response_code( wp_remote_head( $link ) );
+								$response = wp_remote_retrieve_response_code( wp_safe_remote_head( $link ) );
 								$status   = isset( $response ) ? $response : 'invalid link';
 
 							}

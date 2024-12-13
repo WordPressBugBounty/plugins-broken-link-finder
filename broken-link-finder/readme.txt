@@ -3,9 +3,9 @@
 Contributors: Cyberlord92, jayeshprajapat, prashantbhivsane
 Tags: Broken Links, comment links, Dead links, SEO Optimization, broken images, Image Links, 404, embed youtube links, blogs, posts,404 error, homepage, redirection, https, automatic redirection, 404 link, soft 404, redirected, 301 seo redirect, post redirect plugin, fix 404, 404 page, redirect, redirect 404, 301, 302, seo, permalink, page not found, homepage, server error
 Requires at least: 4.6
-Tested up to: 6.3
+Tested up to: 6.7.1
 Requires PHP: 5.3.0
-Stable tag: 2.5.0
+Stable tag: 2.5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,10 @@ This plugin also provides one more button in report tab which redirects to paren
 2. Report
 
 == Changelog ==
+
+= 2.5.1 = 
+* SSRF Vulnerability Fixes
+* Compatibility with WordPress 6.7
 
 = 2.5.0 = 
 * Broken Link Checker/Finder: 
@@ -161,6 +165,10 @@ Broken Link Checker/Finder: Bug Fix
 The first version of WordPress Broken Link Checker/Finder Plugin with basic WordPress broken link scanning.
 
 ==  Upgrade Notice  ==
+
+= 2.5.1 = 
+* SSRF Vulnerability Fixes
+* Compatibility with WordPress 6.7
 
 = 2.5.0 = 
 * Broken Link Checker/Finder: 
